@@ -59,14 +59,14 @@ namespace Semana08_Linq
 
         static void Ordering()
         {
-            var queryLondonCustomers3 = from cust in context.clientes
+            //var queryLondonCustomers3 = from cust in context.clientes
                                         where cust.Ciudad == "London"
                                         orderby cust.NombreCompañia ascending
                                         select cust;
 
             var LambdaLondonCustomers3 = context.clientes.Where(x=> x.Ciudad == "London").OrderBy(x=> x.NombreCompañia);
 
-            foreach (var item in queryLondonCustomers3)
+            foreach (var item in LambdaLondonCustomers3)
             {
                 Console.WriteLine(item.NombreCompañia);
             }
