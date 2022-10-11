@@ -99,7 +99,8 @@ namespace Semana08_Linq
 
         static void Joining()
         {
-            //var innerJoinQuery = from cust in context.clientes join dist in context.Pedidos on cust.idCliente equals dist.IdCliente select new { CustomerName = cust.NombreCompañia, DistributorName = dist.PaisDestinatario };
+            //var innerJoinQuery = from cust in context.clientes join dist in context.Pedidos on cust.idCliente equals dist.IdCliente select
+            //new { CustomerName = cust.NombreCompañia, DistributorName = dist.PaisDestinatario };
 
             var LambdainnerJoinQuery = context.clientes.Join(context.Pedidos, cliente=> cliente.idCliente, pedido => pedido.IdCliente,
                 (clientes, Pedidos) => new { CustomerName = clientes.NombreCompañia, DistributorName = Pedidos.PaisDestinatario});
